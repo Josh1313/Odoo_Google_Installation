@@ -13,19 +13,15 @@ sudo apt update
 sudo apt-get update
 ```
 
-### Step 3: Install Unzip
-```bash
-sudo apt-get install unzip -y
-```
 
-### Step 4: Install Docker
+### Step 3: Install Docker
 ```bash
 sudo apt install docker.io
 sudo systemctl start docker
 sudo systemctl enable docker
 ```
 
-### Step 5: Add User to Docker Group
+### Step 4: Add User to Docker Group
 ```bash
 whoami
 sudo usermod -aG docker user
@@ -35,46 +31,40 @@ Login again and verify the user is added to the Docker group.
 
 ---
 
-### Step 6: Install Docker Compose
+### Step 5: Install Docker Compose
 ```bash
 sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 ```
 
-### Step 7: Install Git
+### Step 6: Install Git
 ```bash
 sudo apt install -y git
 ```
 
-### Step 8: Clone Odoo Repository
+### Step 7: Clone Odoo Repository
 ```bash
 git clone https://github.com/Josh1313/Odoo.git
 cd Odoo
 git switch Development/Production
 ```
 
-### Step 9: Start Docker Compose
+### Step 8: Start Docker Compose
 ```bash
 docker-compose up
 sudo docker-compose up -d
 ```
 
-### Step 10: Install ReportLab Fonts
-```bash
-wget http://www.reportlab.com/ftp/fonts/pfbfer.zip
-unzip pfbfer.zip -d pfbfer_fonts
-sudo mkdir -p /usr/lib/python3/dist-packages/reportlab/fonts
-sudo cp pfbfer_fonts/* /usr/lib/python3/dist-packages/reportlab/fonts/
-```
 
-### Step 11: Restart Docker Compose
+
+### Step 9: Restart Docker Compose
 ```bash
 docker-compose down
 docker-compose up
 ```
 
-### Step 12: Configure Odoo
+### Step 10: Configure Odoo
 ```bash
 sudo nano ./config/odoo.conf
 ```
@@ -93,13 +83,13 @@ Save and exit with `CTRL+O`, `ENTER`, `CTRL+X`.
 
 ---
 
-### Step 13: Install Certbot and Nginx
+### Step 11: Install Certbot and Nginx
 ```bash
 sudo apt install certbot python3-certbot-nginx -y
 sudo apt install -y nginx
 ```
 
-### Step 14: Configure Nginx for Odoo
+### Step 12: Configure Nginx for Odoo
 ```bash
 sudo nano /etc/nginx/sites-available/Odoo
 ```
@@ -130,18 +120,21 @@ server {
 ```
 Save and exit with `CTRL+O`, `ENTER`, `CTRL+X`.
 
-### Step 15: Enable Nginx Site and Test Configuration
+### Step 13: Enable Nginx Site and Test Configuration
 ```bash
 sudo ln -s /etc/nginx/sites-available/Odoo /etc/nginx/sites-enabled/
 sudo nginx -t
 ```
+### Step 14: Restart Nginx
+```bash
+sudo systemctl restart nginx
 
 ### Step 16: Set Up SSL with Certbot
 ```bash
 sudo certbot --nginx -d googleodoo.zapto.org
 ```
 
-### Step 17: Restart Nginx
+### Step 15: Restart Nginx
 ```bash
 sudo systemctl restart nginx
 
