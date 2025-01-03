@@ -132,12 +132,13 @@ sudo systemctl restart nginx
 
 ### Step 15: Set Up SSL with Certbot
 ```bash
-sudo certbot --nginx -d googleodoo.zapto.org
+sudo certbot --nginx -d YOUR-DOMAIN-NAME
 ```
 
 ### Step 16: Restart Nginx
 ```bash
 sudo systemctl restart nginx
+```
 
 
 ### TESTING: YOUR APP
