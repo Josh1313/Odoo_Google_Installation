@@ -96,7 +96,7 @@ sudo nano /etc/nginx/sites-available/Odoo
 Add the following configuration:
 ```nginx
 server {
-    listen 8081;
+    listen 80;
     server_name YOUR-DOMAIN-NAME;
 
     location / {
