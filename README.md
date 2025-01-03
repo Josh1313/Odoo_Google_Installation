@@ -97,7 +97,7 @@ Add the following configuration:
 ```nginx
 server {
     listen 8081;
-    server_name googleodoo.zapto.org;
+    server_name YOUR-DOMAIN-NAME;
 
     location / {
         proxy_pass http://localhost:9069;
@@ -128,13 +128,19 @@ sudo nginx -t
 ### Step 14: Restart Nginx
 ```bash
 sudo systemctl restart nginx
+```
 
-### Step 16: Set Up SSL with Certbot
+### Step 15: Set Up SSL with Certbot
 ```bash
 sudo certbot --nginx -d googleodoo.zapto.org
 ```
 
-### Step 15: Restart Nginx
+### Step 16: Restart Nginx
 ```bash
 sudo systemctl restart nginx
 
+
+### TESTING: YOUR APP
+```bash
+http://<your-domain>:9069
+```
