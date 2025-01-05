@@ -2,7 +2,7 @@
 
 ---
 ### Step 0: Watch the n8n Google installation video to configure your firewall for port 9069
-### Start at minute 09:52
+### Start at minute 09:47
 ```bash
 https://www.youtube.com/watch?v=_Ch_iB6dHsg&list=PLlOfVkvrHKVSt1-t6dMbXGX8a4iyAIxhz&index=4
 ```
