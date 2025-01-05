@@ -1,9 +1,10 @@
 # Google Cloud Setup for Odoo with Docker and Nginx
 
 ---
-### Step 0: Check n8n google instalation video para configurar su firewall para el puerto 9069
+### Step 0: Watch the n8n Google installation video to configure your firewall for port 9069
+### Start at minute 09:52
 ```bash
-minuto=10:27
+https://www.youtube.com/watch?v=_Ch_iB6dHsg&list=PLlOfVkvrHKVSt1-t6dMbXGX8a4iyAIxhz&index=4
 ```
 
 
